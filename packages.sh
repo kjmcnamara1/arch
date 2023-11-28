@@ -16,6 +16,7 @@ dolphin-emu
 youtube
 
 # other packages
+Fira Code iScript
 FiraCode Nerd Font
 touchpad drivers
 megasync
