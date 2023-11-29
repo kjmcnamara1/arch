@@ -30,7 +30,7 @@ black
 # AUR packages
 brave-bin
 visual-studio-code-bin
-displaylink # BUG: Series problems with this
+displaylink # BUG: Serious problems with this
 emulationstation
 dolphin-emu
 youtube
@@ -60,6 +60,15 @@ onedrive
 # start systemd service
 systemctl --user enable onedrive
 systemctl --user start onedrive
+
+# MS SharePoint
+mkdir -p ~/SharePoint/CI_Sandbox
+mkdir -p ~/.config/SharePoint/CI_Sandbox
+cp CI_Sandbox_config ~/.config/SharePoint/CI_Sandbox/config
+onedrive --confdir="~/.config/SharePoint/CI_Sandbox"
+sudo cp onedrive-SharePoint_CI_Sandbox.service /usr/lib/systemd/user/onedrive-SharePoint_CI_Sandbox.service
+systemctl --user enable onedrive-SharePoint_CI_Sandbox.service
+systemctl --user start onedrive-SharePoint_CI_Sandbox.service
 
 # logkeys
 git clone https://github.com/kernc/logkeys.git /tmp/logkeys
