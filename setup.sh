@@ -23,7 +23,7 @@ git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -
 
 # pipx packages
 poetry
-konsave
+konsave # []: Load konsave settings
 jupyterlab
 black
 
@@ -69,6 +69,12 @@ onedrive --confdir="~/.config/SharePoint/CI_Sandbox"
 sudo cp onedrive-SharePoint_CI_Sandbox.service /usr/lib/systemd/user/onedrive-SharePoint_CI_Sandbox.service
 systemctl --user enable onedrive-SharePoint_CI_Sandbox.service
 systemctl --user start onedrive-SharePoint_CI_Sandbox.service
+
+# I Drive
+mkdir -p /mnt/I
+# []: need to add
+
+# Logitech options for MX Master 3
 
 # logkeys
 git clone https://github.com/kernc/logkeys.git /tmp/logkeys
