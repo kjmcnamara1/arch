@@ -1,4 +1,6 @@
 # pacman packages
+man-db
+man-pages
 base-devel
 kbd
 git
