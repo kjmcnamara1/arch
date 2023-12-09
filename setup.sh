@@ -3,12 +3,17 @@ man-db
 man-pages
 base-devel
 kbd
+fuse2 # to be able to run AppImage i.e. Etcher
 git
 zsh
 vim
 neovim
 python-pip
 python-pipx
+xcape
+kvantum
+nodejs
+npm
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -30,12 +35,15 @@ black
 # AUR packages
 brave-bin
 visual-studio-code-bin
+onedrive-abraunegg
+logiops
+logkeys-git
 displaylink # BUG: Serious problems with this
 emulationstation
 dolphin-emu
 youtube
 
-# other packages
+# other packages (included with konsave profile?)
 Fira Code iScript
 FiraCode Nerd Font
 
@@ -50,11 +58,13 @@ mkdir "$ZSH_CUSTOM"/plugins/poetry
 poetry completions zsh >"$ZSH_CUSTOM"/plugins/poetry/_poetry
 
 # MS OneDrive
-sudo pacman -S git dlang-dmd
-git clone https://github.com/skilion/onedrive.git
-cd onedrive || exit
-make
-sudo make install
+yay -S onedrive-abraunegg
+
+# sudo pacman -S git dlang-dmd
+# git clone https://github.com/skilion/onedrive.git
+# cd onedrive || exit
+# make
+# sudo make install
 onedrive
 # follow link and paste response URI
 # start systemd service
@@ -75,8 +85,10 @@ mkdir -p /mnt/I
 # []: need to add
 
 # Logitech options for MX Master 3
+yay -S logiops
 
 # logkeys
+yay -S logkeys-git
 git clone https://github.com/kernc/logkeys.git /tmp/logkeys
 cd /tmp/logkeys || exit
 ./autogen.sh
