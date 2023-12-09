@@ -1,3 +1,5 @@
+# BUG: Need to copy root as sudo and home dir as kevin
+
 # pacman packages
 man-db
 man-pages
@@ -15,16 +17,31 @@ kvantum
 nodejs
 npm
 
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
-
-# powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
-
 # yay
 git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si
+
+yay -S megasync-bin dolphin-megasync-bin brave-bin visual-studio-code-bin onedrive-abraunegg logiops logkeys-git displaylink
+
+pipx install poetry
+pipx install black
+
+onedrive
+onedrive --confdir="~/.config/SharePoint/CI_Sandbox"
+systemctl --user enable onedrive
+systemctl --user start onedrive
+systemctl --user enable onedrive-SharePoint_CI_Sandbox.service
+systemctl --user start onedrive-SharePoint_CI_Sandbox.service
+
+systemctl --user enable xcape
+systemctl --user start xcape
+
+# oh-my-zsh
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
+
+# powerlevel10k
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
 
 # pipx packages
 poetry
@@ -33,6 +50,8 @@ jupyterlab
 black
 
 # AUR packages
+megasync-bin
+dolphin-megasync-bin
 brave-bin
 visual-studio-code-bin
 onedrive-abraunegg
@@ -49,13 +68,11 @@ FiraCode Nerd Font
 
 dual key remap software for capslock- + esc >ctrl
 touchpad drivers
-megasync
-dolphin-megasync
 profile picture
 
 # poetry completions
-mkdir "$ZSH_CUSTOM"/plugins/poetry
-poetry completions zsh >"$ZSH_CUSTOM"/plugins/poetry/_poetry
+# mkdir "$ZSH_CUSTOM"/plugins/poetry
+# poetry completions zsh >"$ZSH_CUSTOM"/plugins/poetry/_poetry
 
 # MS OneDrive
 yay -S onedrive-abraunegg
@@ -84,9 +101,6 @@ systemctl --user start onedrive-SharePoint_CI_Sandbox.service
 mkdir -p /mnt/I
 # []: need to add
 
-# Logitech options for MX Master 3
-yay -S logiops
-
 # logkeys
 yay -S logkeys-git
 git clone https://github.com/kernc/logkeys.git /tmp/logkeys
@@ -100,7 +114,3 @@ sudo make install
 # doesn't record keys from wireless keyboard
 # check https://unix.stackexchange.com/questions/129159/record-every-keystroke-and-store-in-a-file
 # log file located at /var/log/logkeys.log
-
-# config
-~/.zshrc
-~/.config/nvim
