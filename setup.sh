@@ -4,6 +4,7 @@
 man-db
 man-pages
 base-devel
+partitionmanager
 kbd
 fuse2 # to be able to run AppImage i.e. Etcher
 git
@@ -14,6 +15,7 @@ python-pip
 python-pipx
 xcape
 kvantum
+kdeconnect
 nodejs
 npm
 
@@ -34,6 +36,9 @@ systemctl --user start onedrive-SharePoint_CI_Sandbox.service
 
 systemctl --user enable xcape
 systemctl --user start xcape
+
+# EFISTUB
+sudo efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Arch Linux" --loader /vmlinuz-linux --unicode 'initrd=\amd-ucode.img initrd=\initramfs-linux.img root=PARTUUID=f24208d7-67e5-4d8b-a4ef-efc13e1f4dc2 rootflags=subvol=@ rw rootfstype=btrfs quiet splash'
 
 # oh-my-zsh
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
