@@ -79,12 +79,29 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  poetry
-  zsh-autosuggestions
-  sudo
-  dirhistory
-  )
+    zsh-vi-mode
+    git
+    github
+    gitignore
+    poetry
+    sudo
+    dirhistory
+    z
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    ohmyzsh-full-autoupdate
+    )
+
+# User configuration
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
+ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
+export EDITOR=nvim
+export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+# Change to Zsh's default readkey engine
+ZVM_READKEY_ENGINE=$ZVM_READKEY_ENGINE_DEFAULT
+# Do the initialization when the script is sourced (i.e. Initialize instantly)
+ZVM_INIT_MODE=sourcing
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,6 +141,3 @@ alias py='python3'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Vim keybindings
-bindkey -v

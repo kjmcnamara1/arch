@@ -18,6 +18,7 @@ kvantum
 kdeconnect
 nodejs
 npm
+xclip
 
 # yay
 git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si
@@ -63,9 +64,13 @@ onedrive-abraunegg
 logiops
 logkeys-git
 displaylink # BUG: Serious problems with this
+evdi-git
 emulationstation
 dolphin-emu
 youtube
+
+# displaylink fix
+echo "KWIN_FORCE_SW_CURSOR=1" | sudo tee -a /etc/environment
 
 # other packages (included with konsave profile?)
 Fira Code iScript
@@ -92,6 +97,8 @@ onedrive
 # start systemd service
 systemctl --user enable onedrive
 systemctl --user start onedrive
+echo 'export ONEDRIVE="$HOME/OneDrive"' >>~/.profile
+echo 'export ONEDRIVE="$HOME/OneDrive"' >>~/.zprofile
 
 # MS SharePoint
 mkdir -p ~/SharePoint/CI_Sandbox
